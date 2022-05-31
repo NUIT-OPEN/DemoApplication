@@ -3,12 +3,12 @@ package com.example.myapplication
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var b_test: Button
@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var b_layout: Button
     lateinit var b_custom_view: Button
     lateinit var b_list: Button
+    lateinit var b_storage: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,6 +88,13 @@ class MainActivity : AppCompatActivity() {
         b_list.setOnClickListener {
             val intent = Intent()
             intent.setClass(this, ListActivity::class.java)
+            startActivity(intent)
+        }
+
+        b_storage = this.findViewById<Button>(R.id.b_storage)
+        b_storage.setOnClickListener {
+            val intent = Intent()
+            intent.setClass(this, StorageHomeActivity::class.java)
             startActivity(intent)
         }
     }
